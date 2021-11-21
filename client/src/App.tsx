@@ -3,7 +3,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { AppButton } from 'src/components/atoms/AppButton';
 import { AppIconButton } from 'src/components/atoms/AppIconButton';
-import './App.css';
 import { FC, useState } from 'react';
 
 const App: FC = () => {
@@ -13,7 +12,7 @@ const App: FC = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <AppButton
         variant="outlined"
         iconPosition="start"
