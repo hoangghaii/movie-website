@@ -17,3 +17,10 @@ const theme = createTheme({
 });
 
 export default theme;
+
+export const ThemeColor = {
+  gray: '#8395a7',
+  grayLight: '#95a5a6',
+  red: '#e74c3c',
+  black: '#2c3e50',
+};

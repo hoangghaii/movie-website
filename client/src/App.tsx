@@ -1,49 +1,13 @@
-import Fingerprint from '@mui/icons-material/Fingerprint';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SendIcon from '@mui/icons-material/Send';
-import { AppButton } from 'src/components/atoms/AppButton';
-import { AppIconButton } from 'src/components/atoms/AppIconButton';
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { AppAvatar } from './components/atoms/AppAvatar';
 
 const App: FC = () => {
-  const [loading, setLoading] = useState(false);
-  const handleClick = () => {
-    setLoading(!loading);
-  };
-
   return (
     <div>
-      <AppButton
-        variant="outlined"
-        iconPosition="start"
-        icon={<DeleteIcon />}
-        onClick={handleClick}
-        style={{ borderRadius: '8px' }}
-        loading={loading}
-      >
-        Delete
-      </AppButton>
-      <AppButton
-        iconPosition="end"
-        icon={<SendIcon />}
-        onClick={handleClick}
-        style={{ borderRadius: '8px' }}
-        loading={loading}
-      >
-        Send
-      </AppButton>
-      <AppButton
-        onClick={handleClick}
-        style={{ borderRadius: '8px' }}
-        loading={loading}
-        variant="outlined"
-      >
-        Fetch data
-      </AppButton>
-      <AppIconButton
-        color="secondary"
-        icon={<Fingerprint />}
-        onClick={handleClick}
+      <AppAvatar
+        imgSrc={
+          'https://images.unsplash.com/photo-1637361973734-5faf9b1e923e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+        }
       />
     </div>
   );
