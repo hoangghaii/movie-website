@@ -1,6 +1,10 @@
 import { createStyles, makeStyles } from '@mui/styles';
 import { ThemeColor } from 'src/theme';
 
+type PropsType = {
+  variant: 'primary' | 'secondary';
+};
+
 export const useStyles = makeStyles(() =>
   createStyles({
     root: {
@@ -9,10 +13,11 @@ export const useStyles = makeStyles(() =>
       boxSizing: 'border-box',
       gap: 8,
     },
-    avartarContainer: {
+    avartarContainer: (props: PropsType) => ({
       padding: 5,
       position: 'relative',
       '&::before': {
+        display: props.variant === 'primary' ? 'block' : 'none',
         content: '""',
         position: 'absolute',
         top: '50%',
@@ -26,6 +31,7 @@ export const useStyles = makeStyles(() =>
         clipPath: 'polygon(0 0, 81% 0, 24% 100%, 0% 100%);',
       },
       '&::after': {
+        display: props.variant === 'primary' ? 'block' : 'none',
         content: '""',
         position: 'absolute',
         top: '50%',
@@ -38,7 +44,13 @@ export const useStyles = makeStyles(() =>
         borderRadius: '50%',
         clipPath: 'polygon(81% 0, 100% 0, 100% 100%, 24% 100%);',
       },
-    },
+    }),
+    avatar: (props: PropsType) => ({
+      width:
+        props.variant === 'primary' ? '40px !important' : '20px !important',
+      height:
+        props.variant === 'primary' ? '40px !important' : '20px !important',
+    }),
     title: {
       fontSize: '1rem !important',
       color: ThemeColor.black,

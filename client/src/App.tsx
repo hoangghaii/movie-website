@@ -1,15 +1,26 @@
 import { FC } from 'react';
-import { AppAvatar } from './components/atoms/AppAvatar';
+import { BrowserRouter } from 'react-router-dom';
+import { PartyCard } from './components/molecules/PartyCard';
 
 const App: FC = () => {
   return (
-    <div>
-      <AppAvatar
-        imgSrc={
-          'https://images.unsplash.com/photo-1637361973734-5faf9b1e923e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+    <BrowserRouter>
+      <PartyCard
+        partyTitle="Cadaver"
+        partySubTitle="Horror marathon"
+        partyImg={
+          'https://images.unsplash.com/photo-1602230168052-741c2b79ea91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=656&q=80'
         }
       />
-    </div>
+      <PartyCard
+        partyTitle="Cadaver"
+        partySubTitle="Horror marathon"
+        partyImg={
+          'https://images.unsplash.com/photo-1602230168052-741c2b79ea91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=656&q=80'
+        }
+        isChoose
+      />
+    </BrowserRouter>
   );
 };
 
