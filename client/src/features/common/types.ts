@@ -8,3 +8,10 @@ export type ColorVariant =
   | 'success'
   | 'warning'
   | undefined;
+
+export type FilmType = {
+  img: string;
+  name: string;
+  desc: string;
+  episode: number;
+};

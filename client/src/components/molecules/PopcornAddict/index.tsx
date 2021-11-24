@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import { FC } from 'react';
 import { AppAvatar } from 'src/components/atoms/AppAvatar';
 import { AppButton } from 'src/components/atoms/AppButton';
@@ -8,7 +8,7 @@ export const PopcornAddict: FC = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Card className={classes.root}>
       <AppAvatar
         imgSrc={
           'https://cdn.dribbble.com/users/4387/screenshots/4572086/no_rival_dribbble.jpg?compress=1&resize=800x600'
@@ -20,16 +20,18 @@ export const PopcornAddict: FC = () => {
           transform: 'translateX(-50%)',
         }}
       />
-      <Typography variant="subtitle1" component="p" className={classes.title}>
-        Popcorn Addict
-      </Typography>
-      <Typography
-        variant="subtitle2"
-        component="p"
-        className={classes.subTitle}
-      >
-        4/6h viewing time
-      </Typography>
+      <CardContent>
+        <Typography variant="subtitle1" component="p" className={classes.title}>
+          Popcorn Addict
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          component="p"
+          className={classes.subTitle}
+        >
+          4/6h viewing time
+        </Typography>
+      </CardContent>
       <AppButton
         style={{
           textTransform: 'initial',
@@ -39,6 +41,6 @@ export const PopcornAddict: FC = () => {
       >
         View challenges
       </AppButton>
-    </div>
+    </Card>
   );
 };

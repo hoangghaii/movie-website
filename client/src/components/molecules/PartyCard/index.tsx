@@ -1,4 +1,4 @@
-import { AvatarGroup, Typography } from '@mui/material';
+import { AvatarGroup, Card, CardContent, Typography } from '@mui/material';
 import { FC } from 'react';
 import { AppAvatar } from 'src/components/atoms/AppAvatar';
 import { UserAvatar } from 'src/components/atoms/UserAvatar';
@@ -20,7 +20,7 @@ export const PartyCard: FC<PropsType> = ({
   const classes = useStyles({ isChoose });
 
   return (
-    <div className={classes.root}>
+    <Card className={classes.root}>
       <div className={classes.cardHeader}>
         <AppAvatar
           imgSrc={partyImg}
@@ -50,16 +50,18 @@ export const PartyCard: FC<PropsType> = ({
           />
         </AvatarGroup>
       </div>
-      <Typography variant="subtitle1" component="p" className={classes.title}>
-        {partyTitle}
-      </Typography>
-      <Typography
-        variant="subtitle2"
-        component="p"
-        className={classes.subTitle}
-      >
-        {partySubTitle}
-      </Typography>
-    </div>
+      <CardContent className={classes.cardContent}>
+        <Typography variant="subtitle1" component="p" className={classes.title}>
+          {partyTitle}
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          component="p"
+          className={classes.subTitle}
+        >
+          {partySubTitle}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
